@@ -25,6 +25,9 @@ class BedrockKnowledgeBasesStack(Stack):
             knowledge_base=kb,
             data_source_name='source',
             chunking_strategy= bedrock.ChunkingStrategy.FIXED_SIZE,
+            parsing_strategy= bedrock.ParsingStategy.foundation_model(
+                parsing_model=bedrock.BedrockFoundationModel.ANTHROPIC_CLAUDE_3_5_HAIKU_V1_0
+            )
         )
         
 
